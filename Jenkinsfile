@@ -4,7 +4,7 @@ pipeline {
         stage('Build'){
             steps{
                 sh 'mvn clean package'
-                sh -ex "docker build . -t tomcatwebapp:${env.BUILD_NUMBER}"
+                sh "/usr/local/Cellar/docker/18.06.1/bin/docker build . -t tomcatwebapp:${env.BUILD_NUMBER}"
             }
         }
     }
